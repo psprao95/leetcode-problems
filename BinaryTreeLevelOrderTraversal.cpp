@@ -7,6 +7,9 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+ // Approach using BFS
+
 class Solution {
 public:
     vector<vector<int>> levelOrder(TreeNode* root) {
