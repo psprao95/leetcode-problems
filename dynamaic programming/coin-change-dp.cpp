@@ -15,7 +15,6 @@ public:
         for(int i=1;i<amount+1;i++)
         {
             int res=INT32_MAX;
-
             bool flag=false;
             int sub;
             for(int j=0;j<m;j++)
