@@ -13,14 +13,14 @@ public:
             return res;
         }
 
-
         res.push_back({1,1});
         if(numRows==2)
         {
 
             return res;
         }
-        vector<int> temp=r;
+
+        vector<int> temp=res[1];
         for(int i=3;i<=numRows;i++)
         {
             r.clear();
