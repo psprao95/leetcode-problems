@@ -28,7 +28,7 @@ public:
         int m=max(root->val+max(left,right),root->val);
         int n=max(m,left+right+root->val);
         res=max(res,n);
-        int re =max(left,right)+root->val;
+        
        return m;
     }
 };
