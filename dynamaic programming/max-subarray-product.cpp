@@ -6,6 +6,10 @@ public:
         {
             return n;
         }
+        if(n==1)
+        {
+          return nums[0];
+        }
 
         int a=nums[0];
         int b=nums[0];
