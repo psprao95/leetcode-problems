@@ -1,3 +1,5 @@
+
+
 /**
  * Definition for a binary tree node.
  * struct TreeNode {
@@ -10,30 +12,22 @@
 class Solution {
 public:
     bool isBalanced(TreeNode* root) {
-        if(!root)
-        {
-            return true;
-        }
-        int left=helper(root->left);
-        int right=helper(root->right);
-        if(abs(left-right)>1)
-        {
-            return false;
-        }
-        return isBalanced(root->left)&&isBalanced(root->right);
-      
-
+        pair<int,bool>s= helper(root);
+        return s.second;
     }
 
-    int helper(TreeNode *root)
-
+    pair<int,bool> helper(TreeNode *root)
     {
         if(!root)
         {
-            return 0;
+            return {0,true};
         }
-        int left=helper(root->left);
-        int right=helper(root->right);
-        return max(left,right)+1;
+        pair<int,bool> a=helper(root->left);
+        pair<int,bool> b=helper(root->right);
+        if(!a.second||!b.second||abs(a.first-b.first)>1)
+        {
+            return {max(a.first,b.first),false};
+        }
+        return {max(a.first,b.first)+1,true};
     }
 };
