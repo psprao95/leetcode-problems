@@ -19,10 +19,7 @@ public:
 
     int helper(int rem,int m, vector<int>&coins)
     {
-        if(rem<0)
-        {
-            return -1;
-        }
+
         if(rem==0)
         {
             return 0;
