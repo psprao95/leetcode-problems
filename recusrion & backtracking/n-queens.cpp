@@ -2,7 +2,7 @@ class Solution {
     vector<vector<string>> res;
 
     int n;
-    int count=0;
+  
 public:
     vector<vector<string>> solveNQueens(int n) {
 
