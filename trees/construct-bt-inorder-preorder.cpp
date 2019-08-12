@@ -14,7 +14,7 @@ class Solution {
     vector<int> preorder;
     vector<int> inorder;
    map<int,int> mp;
-    int pre;
+    int pre=0;
 
 public:
     TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
@@ -32,7 +32,7 @@ public:
         }
         this->preorder=preorder;
         this->inorder=inorder;
-        pre=0;
+
         return helper(0,n-1);
 
     }
