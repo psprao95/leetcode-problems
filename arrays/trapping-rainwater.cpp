@@ -7,8 +7,10 @@ public:
         {
             return 0;
         }
+
         int left[n];
             int right[n];
+            
         left[0]=height[0];
         for(int i=1;i<n;i++)
         {

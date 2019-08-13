@@ -13,7 +13,7 @@ public:
         if(j==i-1)
         {
             return true;
-        }
+        } 
 
         return helper(i+1,j-1,alex+max(piles[i],piles[j]), lee+min(piles[i],piles[j])) ||
             helper(i+2,j, alex+max(piles[i],piles[i+1]), lee+min(piles[i],piles[i+1])) ||
