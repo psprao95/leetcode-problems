@@ -19,6 +19,5 @@ public:
         res.push_back(root->val);
         inorderTraversal(root->right);
         return res;
-
     }
 };
