@@ -1,36 +1,39 @@
 class Solution {
 public:
-    int minDominoRotations(vector<int>& A, vector<int>& B) {
-        int a=A.size();
-        int b=B.size();
-        map<int,int> mp;
-        for(int i=0;i<a;i++)
+    int wateringPlants(vector<int>& plants, int capacity1,int capacity2) {
+        int n=plants.size();
+        int i=0;
+        int j=n-1;
+        int refills=0;
+        int can1=0;
+        int can2=0;
+
+        while(i<j)
         {
-            mp[A[i]]++;
-            mp[B[i]]++;
+          if(can1<plants[i])
+          {
+            refills++;
+            can1=capacity1;
+          }
+
+          can1-=plants[i];
+          i++;
+
+          if(can2<plants[j])
+          {
+            refills++;
+            can2=capacity2;
+          }
+
+          can2-=plants[j];
+          j--;
         }
 
-        int h=INT32_MIN,n;
-        for(auto it=mp.begin();it!=mp.end();it++)
+        if(i==j && can1+can2<plants[i])
         {
-            if(it->second>h)
-            {
-                h=it->second;
-                n=it->first;
-            }
+          return refills+1;
         }
-
-        int f=0,g=0;
-        for(int i=0;i<a;i++)
-        {
-            if(A[i]!=n && B[i]!=n)
-            {
-                return -1;
-            }
-            if(A[i]==n){f++;}
-            if(B[i]==n){g++;}
-        }
-        return a-max(f,g);
+        return refills;
 
 
     }
