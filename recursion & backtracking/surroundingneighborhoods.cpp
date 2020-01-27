@@ -4,7 +4,7 @@ public:
         int n=board.size();
         if(n==0){return ;}
         int m=board[0].size();
-        vector<vector<bool>> visited(n,vector<bool>(m,false));
+
         for(int i=0;i<n;i++)
         {
             dfs(board,i,0,n,m);
@@ -47,8 +47,5 @@ public:
                 dfs(grid,i,j+1,n,m);
     }
 
-    bool c(vector<vector<char>> &grid,int i,int j,int n,int m)
-    {
-        return (i==0||j==0||i==n-1||j==m-1)&&grid[i][j]=='O';
-    }
+
 };
