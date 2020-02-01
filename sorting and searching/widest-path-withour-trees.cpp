@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int minPathSum(vector<int>& X,vector<int> &Y) {
+    int widestPath(vector<int>& X,vector<int> &Y) {
         sort(X.begin(),X.end());
         int n=X.size()
         int res=0;
